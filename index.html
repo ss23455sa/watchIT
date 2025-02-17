@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>watchIT - Watch Free Movies</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .movie-card {
+            width: 100%;
+            max-width: 300px;
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white">
+    <header class="p-4 bg-gray-800 text-center text-2xl font-bold">WatchIT 🚀 - Free Movies</header>
+    
+    <!-- Google AdSense Ad -->
+    <div class="text-center my-4">
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <ins class="adsbygoogle"
+            style="display:block"
+            data-ad-client="your-ad-client-id"
+            data-ad-slot="your-ad-slot-id"
+            data-ad-format="auto"></ins>
+        <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+    </div>
+    
+    <div class="p-6 flex flex-wrap gap-4 justify-center" id="movie-list"></div>
+
+    <!-- Custom Banner Ad -->
+    <div class="text-center my-4">
+        <a href="https://your-ad-link.com" target="_blank">
+            <img src="https://via.placeholder.com/728x90" alt="Ad Banner" class="mx-auto">
+        </a>
+    </div>
+
+    <script>
+        async function loadMovies() {
+            try {
+                const response = await fetch('movies.json');
+                const movies = await response.json();
+                const movieList = document.getElementById("movie-list");
+
+                movies.forEach(movie => {
+                    const movieDiv = document.createElement("div");
+                    movieDiv.className = "bg-gray-700 rounded-lg overflow-hidden p-4 movie-card";
+                    movieDiv.innerHTML = `
+                        <img src="${movie.imgSrc}" alt="Movie Poster" class="w-full">
+                        <div class="p-2 text-center">
+                            <h3 class="text-lg font-semibold">${movie.title}</h3>
+                            <p class="text-sm text-gray-300">${movie.description}</p>
+                            <button onclick="playMovie('${movie.videoSrc}')" class="mt-2 bg-red-600 px-4 py-2 rounded">Watch Now</button>
+                        </div>
+                    `;
+                    movieList.appendChild(movieDiv);
+                });
+            } catch (error) {
+                console.error("Error loading movies:", error);
+            }
+        }
+
+        function playMovie(src) {
+            window.open(src, '_blank');
+        }
+
+        document.addEventListener("DOMContentLoaded", loadMovies);
+    </script>
+</body>
+</html>
