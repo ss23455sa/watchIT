@@ -5,6 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MovieStream - Watch Free Movies</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Ensure responsive layout */
+        .movie-card {
+            width: 100%;
+            max-width: 300px;
+        }
+    </style>
 </head>
 <body class="bg-gray-900 text-white">
     <header class="p-4 bg-gray-800 text-center text-2xl font-bold">MovieStream</header>
@@ -22,17 +29,26 @@
         </script>
     </div>
     
-    <div class="p-6 grid grid-cols-2 md:grid-cols-4 gap-4" id="movie-list">
-        <div class="bg-gray-700 rounded-lg overflow-hidden p-4">
-            <img src="po.webp" alt="Movie Poster" class="w-full">
+    <div class="p-6 flex flex-wrap gap-4 justify-center" id="movie-list">
+        <div class="bg-gray-700 rounded-lg overflow-hidden p-4 movie-card">
+            <img src="https://via.placeholder.com/300" alt="Movie Poster" class="w-full">
             <div class="p-2 text-center">
                 <h3 class="text-lg font-semibold">My Fault London</h3>
                 <p class="text-sm text-gray-300">A thrilling drama set in London.</p>
-                <button onclick="playMovie('https://drive.google.com/file/d/1i-UE9YXfupOLzKnBnaVJy8mYLrExxuZS/view?usp=drivesdk')" class="mt-2 bg-red-600 px-4 py-2 rounded">Watch Now</button>
+                <button onclick="playMovie('https://drive.google.com/file/d/1i-UE9YXfupOLzKnBnaVJy8mYLrExxuZS/view?usp=drive_link')" class="mt-2 bg-red-600 px-4 py-2 rounded">Watch Now</button>
+            </div>
+        </div>
+        <div class="bg-gray-700 rounded-lg overflow-hidden p-4 movie-card">
+            <img src="https://via.placeholder.com/300" alt="Movie Poster" class="w-full">
+            <div class="p-2 text-center">
+                <h3 class="text-lg font-semibold">My Fault London</h3>
+                <p class="text-sm text-gray-300">A thrilling drama set in London.</p>
+                <button onclick="playMovie('https://example.com/movie.mp4')" class="mt-2 bg-red-600 px-4 py-2 rounded">Watch Now</button>
             </div>
         </div>
     </div>
     
+     
     <!-- Custom Banner Ad -->
     <div class="text-center my-4">
         <a href="https://your-ad-link.com" target="_blank">
@@ -43,6 +59,21 @@
     <script>
         function playMovie(src) {
             window.open(src, '_blank');
+        }
+
+        function addMovie(title, description, imgSrc, videoSrc) {
+            const movieList = document.getElementById("movie-list");
+            const movieDiv = document.createElement("div");
+            movieDiv.className = "bg-gray-700 rounded-lg overflow-hidden p-4 movie-card";
+            movieDiv.innerHTML = `
+                <img src="${imgSrc}" alt="Movie Poster" class="w-full">
+                <div class="p-2 text-center">
+                    <h3 class="text-lg font-semibold">${title}</h3>
+                    <p class="text-sm text-gray-300">${description}</p>
+                    <button onclick="playMovie('${videoSrc}')" class="mt-2 bg-red-600 px-4 py-2 rounded">Watch Now</button>
+                </div>
+            `;
+            movieList.appendChild(movieDiv);
         }
     </script>
 </body>
