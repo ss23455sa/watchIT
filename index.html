@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MovieStream - Watch Free Movies</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 text-white">
+    <header class="p-4 bg-gray-800 text-center text-2xl font-bold">MovieStream</header>
+    
+    <!-- Google AdSense Ad -->
+    <div class="text-center my-4">
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <ins class="adsbygoogle"
+            style="display:block"
+            data-ad-client="your-ad-client-id"
+            data-ad-slot="your-ad-slot-id"
+            data-ad-format="auto"></ins>
+        <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+    </div>
+    
+    <div class="p-6 grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div class="bg-gray-700 rounded-lg overflow-hidden">
+            <img src="https://via.placeholder.com/300" alt="Movie Poster" class="w-full">
+            <div class="p-2 text-center">
+                <h3 class="text-lg font-semibold">Movie Title</h3>
+                <button onclick="playMovie()" class="mt-2 bg-red-600 px-4 py-2 rounded">Watch Now</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Custom Banner Ad -->
+    <div class="text-center my-4">
+        <a href="https://your-ad-link.com" target="_blank">
+            <img src="https://via.placeholder.com/728x90" alt="Ad Banner" class="mx-auto">
+        </a>
+    </div>
+    
+    <div id="player" class="fixed inset-0 bg-black bg-opacity-90 hidden flex items-center justify-center">
+        <video id="movie" controls class="w-3/4">
+            <source src="movie.mp4" type="video/mp4">
+        </video>
+        <button onclick="closePlayer()" class="absolute top-4 right-4 text-xl">✖</button>
+    </div>
+
+    <script>
+        function playMovie() {
+            document.getElementById('player').classList.remove('hidden');
+        }
+        function closePlayer() {
+            document.getElementById('player').classList.add('hidden');
+        }
+    </script>
+</body>
+</html>
