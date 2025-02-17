@@ -1,1 +1,27 @@
 
+[
+    {
+        "title": "Captain America: Brave New World",
+        "description": "Sam Wilson, the new Captain America, finds himself in the middle of an international incident and must discover the motive behind a nefarious global plan.",
+        "imgSrc": "./posters/cap.webp",
+        "videoSrc": "https://drive.google.com/file/d/1DID6lli0cVdwx05Uxf9-6WMbBsrA8zHF/view?usp=drive_link"
+    },
+    {
+        "title": "My Fault London",
+        "description": "An 18-year-old girl moves from America to London with her mother and wealthy stepfather. She meets her stepbrother, and an attraction brews despite their efforts.",
+        "imgSrc": "./posters/mfp.webp",
+        "videoSrc": "https://drive.google.com/file/d/1i-UE9YXfupOLzKnBnaVJy8mYLrExxuZS/view?usp=drive_link"
+    },
+    {
+        "title": "Kraven the Hunter",
+        "description": "Russian immigrant Sergei Kravinoff is on a mission to prove that he is the greatest hunter in the world.",
+        "imgSrc": "./posters/kravenp.webp",
+        "videoSrc": "https://drive.google.com/file/d/1fH1sx37e84mH1gTjWU83KucWEtPYBU38/view?usp=drive_link"
+    },
+    {
+        "title": "The Gray Man",
+        "description": "Count Gentry aka, Sierra Six a highly skilled former CIA Operative, was once the agency’s best merchant of death. After his escape from prison, and recruitment by former handler Donald Fitzroy.",
+        "imgSrc": "./posters/grayp.webp",
+        "videoSrc": "https://drive.google.com/file/d/1oirc_RICt9xeoq1e4W-VvNwaQyn9kl-O/view?usp=drive_link"
+    }
+]
